@@ -1,5 +1,14 @@
 <?php
-
+/**
+ * Class: respvid_widget
+ * 
+ * A widget that will display one or more media items (supported by WordPress oEmbed) in a group.
+ * Aspect ratio for all items, the number of items per row and of course the URLs of the media to display can be specified.
+ * If needed, RTL support can be turned on (media will be right-aligned).
+ * 
+ * @package Responsive Video Shortcodes
+ * @version 1.15
+ */
 class respvid_widget extends WP_Widget
 {
     function respvid_widget()
@@ -9,7 +18,7 @@ class respvid_widget extends WP_Widget
         $this->alt_option_name = 'widget_respvid_widget';
     }
     
-    function form($instance)
+    function form( $instance )
     {
         $instance = wp_parse_args( (array) $instance, array( 'title' => '', 'aspect-ratio' => '16:9', 'num-per-row' => 1, 'rtl' => 0, 'list' => '' ) );
         $title = esc_attr( $instance['title'] );
@@ -27,7 +36,7 @@ class respvid_widget extends WP_Widget
         	<label for="<?php echo $this->get_field_id('aspect-ratio'); ?>"><?php _e('Aspect Ratio', 'respvid'); ?></label>
         	<select class="widefat" id="<?php echo $this->get_field_id('aspect-ratio'); ?>" name="<?php echo $this->get_field_name('aspect-ratio'); ?>">
         		<?php
-        		$options = array( '4:3', '16:9', '21:9' );
+        		$options = resp_get_allowed_aspect_ratios();
         		foreach( $options as $option )
         		{
         			echo '<option value="' . $option . '" id="' . $option . '" ' . selected( $option, $aspect_ratio ) . '>' . $option . '</option>';

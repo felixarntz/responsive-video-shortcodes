@@ -8,17 +8,17 @@ Author URI:        http://www.leaves-and-love.net
 Author:            Felix Arntz
 Donate link:       http://www.leaves-and-love.net/responsive-video-shortcodes/
 Requires at least: 2.9 
-Tested up to:      3.5.1
+Tested up to:      3.6
 Stable tag:        1.1
-Version:           1.1
+Version:           1.15
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-This tiny Plugin allows you to embed Online Video from YouTube, Vimeo and more for a responsive Layout - they scale according to the screen size.
+This tiny Plugin allows you to embed Online Video from YouTube, Vimeo and more media for a responsive Layout - they scale according to the screen size. It features shortcode and widget.
 
 == Description ==
 
-Responsive Video Shortcodes is a tiny Plugin that allows you to embed video files from the popular video hosting platforms in a responsive design. It is based on the Wordpress oEmbed Feature, so it supports every online service that is natively supported by Wordpress. All you need to do is use the shortcode and put a video URL in the content between the tags. Alternatively, you can use a widget to display a (responsive) list of videos.
+Responsive Video Shortcodes is a tiny Plugin that allows you to embed video files from the popular video hosting platforms in a responsive design. It is based on the Wordpress oEmbed Feature, so it supports every online service that is natively supported by Wordpress. All you need to do is use the shortcode and put a video URL in the content between the tags. Alternatively, you can use a widget to display a (responsive) list of videos. You can furthermore use the plugin to display even non-video media in a responsive manner, for example Flickr images, Soundcloud songs or Spotify playlists.
 
 == Installation ==
 

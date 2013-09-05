@@ -1,0 +1,180 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: responsive-video\n"
+"POT-Creation-Date: 2013-09-05 23:57+0100\n"
+"PO-Revision-Date: 2013-09-05 23:57+0100\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.5.4\n"
+"X-Poedit-KeywordsList: __;_e\n"
+"X-Poedit-Basepath: .\n"
+"X-Poedit-SearchPath-0: ..\n"
+
+#: ../respvid-widget.php:16
+msgid "Use this widget to display a custom list of videos in a responsive way."
+msgstr ""
+
+#: ../respvid-widget.php:17
+msgid "Responsive Video List Widget"
+msgstr ""
+
+#: ../respvid-widget.php:32
+msgid "Widget Title"
+msgstr ""
+
+#: ../respvid-widget.php:36
+msgid "Aspect Ratio"
+msgstr ""
+
+#: ../respvid-widget.php:48
+msgid "Videos per row"
+msgstr ""
+
+#: ../respvid-widget.php:51
+msgid "Value must be between 1 and 6"
+msgstr ""
+
+#: ../respvid-widget.php:55
+msgid "Right-to-Left Language?"
+msgstr ""
+
+#: ../respvid-widget.php:58
+msgid "List of Video URLs"
+msgstr ""
+
+#: ../respvid-widget.php:61
+msgid "One URL per line. No other separators than the linebreak."
+msgstr ""
+
+#: ../respvid-widget.php:141
+msgid "There are no videos to display."
+msgstr ""
+
+#: ../respvid.php:62
+msgid "Settings"
+msgstr ""
+
+#: ../respvid.php:63
+msgid "You're lucky!"
+msgstr ""
+
+#: ../respvid.php:63
+msgid ""
+"This plugin does not require any settings. However, you find a short "
+"tutorial on this page to see how the shortcode and the widget work."
+msgstr ""
+
+#: ../respvid.php:64
+msgid ""
+"This plugin supports all the video hosting platforms that Wordpress natively "
+"supports. You can find a list of these in the"
+msgstr ""
+
+#: ../respvid.php:65
+msgid ""
+"Furthermore (although it is not the original purpose of the plugin) you can "
+"also use the shortcode to display other oEmbed media in a responsive manner. "
+"For this reason, the plugin also allows some aspect ratios that would be "
+"weird for video, like 3:2, 3:1 and 5:6."
+msgstr ""
+
+#: ../respvid.php:66
+msgid ""
+"A few recommendations? Many images use an aspect ratio of 3:2, the 3:1 ratio "
+"might be useful for single audio like from Soundcloud or Spotify, while the "
+"5:6 thing is a good choice for audio playlists or something like that."
+msgstr ""
+
+#: ../respvid.php:67
+msgid "Shortcode usage"
+msgstr ""
+
+#: ../respvid.php:68
+msgid "Example"
+msgstr ""
+
+#: ../respvid.php:69
+msgid ""
+"This shortcode allows you to embed video from video hosting platforms (and "
+"some other media) in a responsive way. It can be used for any platform that "
+"the <a href=\"http://codex.wordpress.org/Embeds\" target=\"_blank"
+"\">Wordpress oEmbed Feature</a> supports."
+msgstr ""
+
+#: ../respvid.php:70
+msgid ""
+"All you need to do is insert the video URL as the content between, the "
+"shortcode will then handle the responsive embedding."
+msgstr ""
+
+#: ../respvid.php:71
+msgid "Parameters"
+msgstr ""
+
+#: ../respvid.php:72
+msgid "The shortcode uses the following three parameters:"
+msgstr ""
+
+#: ../respvid.php:74
+msgid ""
+"The alignment of the video; if you use &quot;left&quot; or &quot;"
+"right&quot;, it will be a float layout."
+msgstr ""
+
+#: ../respvid.php:74 ../respvid.php:75 ../respvid.php:76
+msgid "Possible values:"
+msgstr ""
+
+#: ../respvid.php:74 ../respvid.php:75 ../respvid.php:76
+msgid "Default"
+msgstr ""
+
+#: ../respvid.php:75
+msgid ""
+"The aspect ratio of the video; be careful: not all services look good on "
+"every ratio."
+msgstr ""
+
+#: ../respvid.php:76
+msgid ""
+"The width of the video in percent; please only write the number, NOT the "
+"percent sign."
+msgstr ""
+
+#: ../respvid.php:76
+msgid "every full number between 1 and 100"
+msgstr ""
+
+#: ../respvid.php:78
+msgid ""
+"<em>Note:</em> All parameters are optional. If they are not given, the "
+"default values are used."
+msgstr ""
+
+#: ../respvid.php:79
+msgid "Widget usage"
+msgstr ""
+
+#: ../respvid.php:80
+msgid ""
+"Using the widget you can display a list of videos (or other media) in a "
+"responsive way - the videos scale down according to the widget width. The "
+"widget furthermore supports RTL language formatting."
+msgstr ""
+
+#: ../respvid.php:81
+msgid ""
+"The widget settings are rather self-explainatory. All you need to do is to "
+"type in the URLs of your videos into the text area (one URL per line!). You "
+"can then choose the aspect ratio of the videos (note again: not all hosting "
+"services support all ratios!) as well as how many videos will be displayed "
+"in a row. If you tick the checkbox, the videos will be presented from right-"
+"to-left - and that's about it."
+msgstr ""
+
+#: ../respvid.php:164
+msgid "Error: Invalid URL!"
+msgstr ""
