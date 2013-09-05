@@ -1,0 +1,64 @@
+@CHARSET "UTF-8";
+
+.resp-video-wrapper {
+	position: relative;
+	height: 0;
+	margin-bottom: 1em;
+}
+
+.size-4-3 {
+	padding-bottom: 75%;
+}
+
+.size-16-9 {
+	padding-bottom: 56.25%;
+}
+
+.size-21-9 {
+	padding-bottom: 42.86%;
+}
+
+.resp-video-wrapper iframe, .resp-video-wrapper object, .resp-video-wrapper embed {
+	position: absolute;
+	margin: 0;
+	width: 100%;
+	height: 100%;
+}
+
+.resp-video-left {
+	float: left;
+	margin-right: 1%;
+}
+.resp-video-center {
+	float: none;
+	clear: both;
+	margin: 0px auto 0px auto;
+}
+.resp-video-right {
+	float: right;
+	margin-left: 1%;
+}
+
+.resp-num-1 {
+	width: 100%;
+}
+.resp-num-2 {
+	width: 49%;
+}
+.resp-num-3 {
+	width: 32%;
+}
+.resp-num-4 {
+	width: 24%;
+}
+.resp-num-5 {
+	width: 19%;
+}
+.resp-num-6 {
+	width: 15%;
+}
+
+.clear {
+	float: none;
+	clear: both;
+}
