@@ -12,6 +12,8 @@ Version: 1.15
 Author URI: http://www.leaves-and-love.net/
 */
 
+define( 'RESPVID_VERSION', '1.15' );
+
 require( plugin_dir_path( __FILE__ ) . 'respvid-widget.php' );
 
 /**
@@ -65,7 +67,7 @@ function resp_options_page()
 	echo __('Furthermore (although it is not the original purpose of the plugin) you can also use the shortcode to display other oEmbed media in a responsive manner. For this reason, the plugin also allows some aspect ratios that would be weird for video, like 3:2, 3:1 and 5:6.', 'respvid' ) . ' ' . "\n";
 	echo __('A few recommendations? Many images use an aspect ratio of 3:2, the 3:1 ratio might be useful for single audio like from Soundcloud or Spotify, while the 5:6 thing is a good choice for audio playlists or something like that.', 'respvid' ) . '</p>' . "\n";
 	echo '<h3>' . __('Shortcode usage', 'respvid') . '</h3>' . "\n";
-	echo '<p style="margin-left: 20px;">' . __('Example', 'respvid') . ': <code>[video align="right" aspect_ratio="16:9" width="90"]http://www.youtube.com/watch?v=xxxxxxxxxxx[/video]</code></p>' . "\n";
+	echo '<p style="margin-left: 20px;">' . __('Example', 'respvid') . ': <code>[video align="right" aspect_ratio="16:9" width="90" autoplay="0"]http://www.youtube.com/watch?v=xxxxxxxxxxx[/video]</code></p>' . "\n";
 	echo '<p>' . __('This shortcode allows you to embed video from video hosting platforms (and some other media) in a responsive way. It can be used for any platform that the <a href="http://codex.wordpress.org/Embeds" target="_blank">Wordpress oEmbed Feature</a> supports.', 'respvid') . '<br />';
 	echo __('All you need to do is insert the video URL as the content between, the shortcode will then handle the responsive embedding.', 'respvid') . '</p>' . "\n";
 	echo '<h3>' . __('Parameters', 'respvid') . '</h3>' . "\n";
@@ -74,11 +76,12 @@ function resp_options_page()
 	echo '<li style="margin-left:20px;"><strong>align</strong><br />' . __('The alignment of the video; if you use &quot;left&quot; or &quot;right&quot;, it will be a float layout.', 'respvid' ) . '<br /><em>' . __('Possible values:', 'respvid' ) . '</em> left, center, right<br /><em>' . __( 'Default', 'respvid' ) . ':</em> center</li>' . "\n";
 	echo '<li style="margin-left:20px;"><strong>aspect_ratio</strong><br />' . __('The aspect ratio of the video; be careful: not all services look good on every ratio.', 'respvid' ) . '<br /><em>' . __('Possible values:', 'respvid' ) . '</em> 4:3, 16:9, 21:9, 3:2, 3:1, 5:6<br /><em>' . __( 'Default', 'respvid' ) . ':</em> 16:9</li>' . "\n";
 	echo '<li style="margin-left:20px;"><strong>width</strong><br />' . __('The width of the video in percent; please only write the number, NOT the percent sign.', 'respvid' ) . '<br /><em>' . __('Possible values:', 'respvid' ) . '</em>' . __( 'every full number between 1 and 100', 'respvid' ) . '<br /><em>' . __( 'Default', 'respvid' ) . ':</em> 100</li>' . "\n";
+	echo '<li style="margin-left:20px;"><strong>autoplay</strong><br />' . __('If the media content should start playing automatically; sadly, as of now Vimeo and Soundcloud are the only platforms supporting autoplays in oEmbed; this attribute will not change anything when used with another provider', 'respvid' ) . '<br /><em>' . __('Possible values:', 'respvid' ) . '</em> 0, 1<br /><em>' . __( 'Default', 'respvid' ) . ':</em> 0</li>' . "\n";
 	echo '</ul>' . "\n";
 	echo '<p>' . __('<em>Note:</em> All parameters are optional. If they are not given, the default values are used.', 'respvid') . '</p>' . "\n";
 	echo '<h3>' . __('Widget usage', 'respvid') . '</h3>' . "\n";
 	echo '<p>' . __('Using the widget you can display a list of videos (or other media) in a responsive way - the videos scale down according to the widget width. The widget furthermore supports RTL language formatting.') . '</p>' . "\n";
-	echo '<p>' . __('The widget settings are rather self-explainatory. All you need to do is to type in the URLs of your videos into the text area (one URL per line!). You can then choose the aspect ratio of the videos (note again: not all hosting services support all ratios!) as well as how many videos will be displayed in a row. If you tick the checkbox, the videos will be presented from right-to-left - and that\'s about it.') . '</p>' . "\n";
+	echo '<p>' . __('The widget settings are rather self-explainatory. All you need to do is to type in the URLs of your videos into the text area (one URL per line!). You can then choose the aspect ratio of the videos (note again: not all hosting services support all ratios!) as well as how many videos will be displayed in a row. If you tick the checkbox, the videos will be presented from right-to-left - and that\'s about it.', 'respvid' ) . '</p>' . "\n";
 	echo '</div>' . "\n";
 }
 
@@ -101,7 +104,11 @@ add_action( 'admin_menu', 'resp_menu' );
  * <li>align: 'center'</li>
  * <li>aspect_ratio: '16:9'</li>
  * <li>width: '100'</li>
+ * <li>autoplay: '0'</li>
  * </ul>
+ * 
+ * Watch out: Using autoplay with oEmbed is currently only supported by Vimeo and Soundcloud.
+ * However, there won't be any errors with the others, it just won't autoplay.
  * 
  * @param array $atts attributes passed by the shortcode
  * @param string $content the content in between the shortcode tags
@@ -117,13 +124,14 @@ function resp_video_shortcode( $atts , $content = null )
 			'align' => 'center',
 			'aspect_ratio' => '16:9',
 			'width' => '100',
+			'autoplay' => 0,
 		), $atts )
 	);
 	
-	$embed = resp_validate_attributes( $align, $aspect_ratio, $width );
+	$embed = resp_validate_attributes( $align, $aspect_ratio, $width, $autoplay );
 	
 	$code = resp_before_video( $embed['align'], $embed['aspect-ratio'], $embed['width'] );
-	$code .= resp_embed_video( $content );
+	$code .= resp_embed_video( $content, $embed['autoplay'] );
 	$code .= resp_after_video();
 	return $code;
 }
@@ -155,10 +163,10 @@ function resp_before_video( $align, $aspect, $width = null )
  * @return string HTML code containing the oEmbed
  * @since 1.0
  */
-function resp_embed_video( $url )
+function resp_embed_video( $url, $autoplay = 0 )
 {
 	$regex = "/ (width|height)=\"[0-9\%]*\"/";
-	$embed_code = wp_oembed_get( $url, array( 'width' => '100%', 'height' => '100%' ) );
+	$embed_code = wp_oembed_get( $url, array( 'width' => '100%', 'height' => '100%', 'autoplay' => $autoplay ) );
 	if( !$embed_code )
 	{
 		return '<strong>' . __('Error: Invalid URL!', 'respvid') . '</strong>';
@@ -188,7 +196,7 @@ function resp_after_video()
  * @return array contains the validated attributes
  * @since 1.0
  */
-function resp_validate_attributes( $align, $aspect_ratio, $width )
+function resp_validate_attributes( $align, $aspect_ratio, $width, $autoplay )
 {
 	$atts = null;
 	if( $align != 'left' && $align != 'center' && $align != 'right' )
@@ -211,7 +219,7 @@ function resp_validate_attributes( $align, $aspect_ratio, $width )
 		$atts['aspect-ratio'] = $aspect_ratio;
 	}
 	$atts['aspect-ratio'] = str_replace( ':', '-', $atts['aspect-ratio'] );
-	$width = intval($width);
+	$width = intval( $width );
 	if( $width < 1 || $width > 100 )
 	{
 		$atts['width'] = 100;
@@ -219,6 +227,15 @@ function resp_validate_attributes( $align, $aspect_ratio, $width )
 	else
 	{
 		$atts['width'] = $width;
+	}
+	$autoplay = intval( $autoplay );
+	if( $autoplay > 0 )
+	{
+		$atts['autoplay'] = 1;
+	}
+	else
+	{
+		$atts['autoplay'] = 0;
 	}
 	return $atts;
 }
@@ -241,5 +258,67 @@ function resp_get_allowed_aspect_ratios()
 	);
 	return $allowed;
 }
+
+/**
+ * Modifies the original WordPress embed defaults to allow an autoplay argument.
+ * 
+ * If autoplay is set to 1, the media will automatically start playing (if it is possible).
+ * Sadly, only two hosting providers support autoplays using oEmbed as of now (Vimeo and Soundcloud).
+ * Therefore the autoplay argument won't have any meaning for all the other platforms.
+ * 
+ * This function is called by the WordPress Core filter 'embed_defaults'.
+ * 
+ * @param array $defaults the embed defaults array
+ * @return array the modified embed defaults array containing an 'autoplay' key
+ * @see resp_handle_additional_embed_args()
+ * @since 1.15
+ */
+function resp_modify_wp_embed_defaults( $defaults = array() )
+{
+	$defaults['autoplay'] = 0;
+	
+	return $defaults;
+}
+add_filter( 'embed_defaults', 'resp_modify_wp_embed_defaults', 10, 1 );
+
+/**
+ * Handles additional embed args that are not part of WordPress Core.
+ * 
+ * Currently, there is only one such argument, the 'autoplay' argument.
+ * It will only be used if it is set to 1, otherwise it would not do any change anyways.
+ * Sadly, only Vimeo and Soundcloud currently support autoplays using oEmbed.
+ * 
+ * Therefore, if the 'autoplay' argument is set to 1, it will only be passed if the oEmbed media is either from Vimeo or Soundcloud.
+ * 
+ * This function is called by the WordPress Core filter 'oembed_fetch_url'.
+ * 
+ * @param string $provider the oEmbed URL for the media
+ * @param string $url the original URL of the media
+ * @param array $args additional arguments (contain 'width', 'height' and 'autoplay' keys)
+ * @return string the provider string with a query argument for autoplay (if necessary)
+ * @link https://developer.vimeo.com/apis/oembed, http://developers.soundcloud.com/docs/oembed
+ * @since 1.15
+ */
+function resp_handle_additional_embed_args( $provider, $url, $args = array() )
+{
+	if( $args['autoplay'] == 1 )
+	{
+		$values = array(
+			'http://vimeo.com/api/oembed'		=> array( 'autoplay', 1 ),
+			'http://soundcloud.com/oembed'		=> array( 'auto_play', true)
+		);
+		foreach( $values as $oembed_url => $params )
+		{
+			if( strpos( $provider, $oembed_url ) !== false )
+			{
+				$provider = add_query_arg( $params[0], $params[1], $provider );
+				break;
+			}
+		}
+	}
+	
+	return $provider;
+}
+add_filter( 'oembed_fetch_url', 'resp_handle_additional_embed_args', 10, 3 );
 
 ?>

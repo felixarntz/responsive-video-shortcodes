@@ -9,7 +9,7 @@ Author:            Felix Arntz
 Donate link:       http://www.leaves-and-love.net/responsive-video-shortcodes/
 Requires at least: 2.9 
 Tested up to:      3.6
-Stable tag:        1.1
+Stable tag:        1.15
 Version:           1.15
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -25,6 +25,8 @@ Responsive Video Shortcodes is a tiny Plugin that allows you to embed video file
 1. Upload the entire `responsive-video` folder to the `/wp-content/plugins/` directory.
 2. Activate the plugin through the 'Plugins' menu in WordPress.
 3. Use the shortcode or the widget - or both.
+
+The shortcode can use the attributes 'align', 'aspect_ratio', 'width' and 'autoplay'.
 
 You will find a 'Responsive Video' menu in your WordPress settings. There are no settings to configure, so it contains a detailed tutorial on how to use the shortcode.
 
@@ -49,6 +51,12 @@ Maybe you entered them the wrong way. Please give only ONE VIDEO URL per line, a
 3. screenshot-3.png
 
 == Changelog ==
+
+= 1.15 =
+* Three more Aspect-ratios (3:2, 3:1, 5:6) added
+* Autoplay Functionality added for all providers supporting this
+* POT File for Translations added
+* German Translation added
 
 = 1.1 =
 * Widget for Responsive Video List added

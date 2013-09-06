@@ -13,7 +13,7 @@ You have multiple options when installing the plugin. For production environment
 If you want to use the plugin for production environments, it is recommended to use the current release version:
 
 * Either download it from the WordPress Plugin Repository: http://downloads.wordpress.org/plugin/responsive-video-shortcodes.latest-stable.zip
-* Or download the current release from Github: https://github.com/felixarntz/Responsive-Video-Shortcodes-for-WordPress/archive/v1.1.zip
+* Or download the current release from Github: https://github.com/felixarntz/Responsive-Video-Shortcodes-for-WordPress/archive/v1.15.zip
 
 If you are a developer and you are interested in testing, contributing or translating, feel free to download the developmental version of the plugin:
 
@@ -28,6 +28,14 @@ In each case, please raise an issue [here on Github](https://github.com/felixarn
 Contributions
 -------------
 You want to help developing the plugin? That is amazing! If you have some code to improve the functionalities or to fix a bug, I would be grateful if you would share them with me. In this case, please do it using a [Pull Request](https://github.com/felixarntz/Responsive-Video-Shortcodes-for-WordPress/pulls).
+
+Current News on oEmbed
+----------------------
+WordPress uses [oEmbed](http://oembed.com/) to embed external media. As of Version 1.15, Responsive Video Shortcodes includes an autoplay attribute for the short code. However, as far as I found out, only Vimeo and Soundcloud support autoplays using oEmbed, and still they have different names for the argument. If you find out that another of the WordPress-supported oEmbed platforms supports autoplay, it would be nice if you let me know.
+
+Currently the only services supporting autoplay with oEmbed are:
+* [Vimeo](https://developer.vimeo.com/apis/oembed)
+* [Soundcloud](http://developers.soundcloud.com/docs/oembed)
 
 Support
 -------
