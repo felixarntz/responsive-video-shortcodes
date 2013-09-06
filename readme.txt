@@ -9,8 +9,8 @@ Author:            Felix Arntz
 Donate link:       http://www.leaves-and-love.net/responsive-video-shortcodes/
 Requires at least: 2.9 
 Tested up to:      3.6
-Stable tag:        1.15
-Version:           1.15
+Stable tag:        1.16
+Version:           1.16
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -18,7 +18,22 @@ This tiny Plugin allows you to embed Online Video from YouTube, Vimeo and more m
 
 == Description ==
 
-Responsive Video Shortcodes is a tiny Plugin that allows you to embed video files from the popular video hosting platforms in a responsive design. It is based on the Wordpress oEmbed Feature, so it supports every online service that is natively supported by Wordpress. All you need to do is use the shortcode and put a video URL in the content between the tags. Alternatively, you can use a widget to display a (responsive) list of videos. You can furthermore use the plugin to display even non-video media in a responsive manner, for example Flickr images, Soundcloud songs or Spotify playlists.
+Responsive Video Shortcodes is a tiny Plugin that allows you to embed video files from the popular video hosting platforms in a responsive design. It is based on the Wordpress oEmbed Feature, so it supports every online service that is natively supported by Wordpress. All you need to do is use the shortcode and put a video URL in the content between the tags. Alternatively, you can use the included widget to display a (responsive) list of videos.
+
+You can furthermore use the plugin to display even non-video media in a responsive manner, for example Flickr images, Soundcloud songs or Spotify playlists.
+
+= Supported Aspect ratios =
+
+* 4:3 (mainly for video)
+* 16:9 (mainly for video)
+* 21:9 (mainly for video)
+* 3:2 (for some images)
+* 3:1 (recommended to use with single audio tracks)
+* 5:6 (recommended to use with audio playlists)
+
+= Autoplay functionality =
+
+As of Version 1.16, Vimeo and Soundcloud are the only platforms supporting autoplays using oEmbed (the WordPress way to embed media). Therefore it is currently not possible to extend the plugin to add the autoplay functionality for another provider. However, if more platforms start supporting this, it will be implemented in future versions of the plugin aswell.
 
 == Installation ==
 
@@ -52,6 +67,9 @@ Maybe you entered them the wrong way. Please give only ONE VIDEO URL per line, a
 
 == Changelog ==
 
+= 1.16 =
+* Readme updated
+
 = 1.15 =
 * Three more Aspect-ratios (3:2, 3:1, 5:6) added
 * Autoplay Functionality added for all providers supporting this
@@ -68,3 +86,7 @@ Maybe you entered them the wrong way. Please give only ONE VIDEO URL per line, a
 == Upgrade Notice ==
 
 The current version of Responsive Video Shortcodes requires WordPress 2.9 or higher. Some video hosting platforms might not be available for use if you do not have the current version of WordPress installed.
+
+== Additional Credit ==
+
+This plugin would not exist without the amazing articles by [Thierry Koblentz](http://alistapart.com/article/creating-intrinsic-ratios-for-video) and [Anders M. Andersen](http://amobil.se/2011/11/responsive-embeds/).

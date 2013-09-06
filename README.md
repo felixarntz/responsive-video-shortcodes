@@ -13,7 +13,7 @@ You have multiple options when installing the plugin. For production environment
 If you want to use the plugin for production environments, it is recommended to use the current release version:
 
 * Either download it from the WordPress Plugin Repository: http://downloads.wordpress.org/plugin/responsive-video-shortcodes.latest-stable.zip
-* Or download the current release from Github: https://github.com/felixarntz/Responsive-Video-Shortcodes-for-WordPress/archive/v1.15.zip
+* Or download the current release from Github: https://github.com/felixarntz/Responsive-Video-Shortcodes-for-WordPress/archive/v1.16.zip
 
 If you are a developer and you are interested in testing, contributing or translating, feel free to download the developmental version of the plugin:
 
@@ -41,3 +41,7 @@ Support
 -------
 If you aren't a developer and you need help with the Responsive Video Shortcodes plugin, please visit the official
 [support forums on WordPress.org](http://wordpress.org/support/plugin/responsive-video-shortcodes).
+
+Credit
+------
+This plugin would not exist without the amazing articles by [Thierry Koblentz](http://alistapart.com/article/creating-intrinsic-ratios-for-video) and [Anders M. Andersen](http://amobil.se/2011/11/responsive-embeds/).

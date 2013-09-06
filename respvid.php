@@ -1,18 +1,18 @@
 <?php
 /**
  * @package Responsive Video Shortcodes
- * @version 1.15
+ * @version 1.16
  */
 /*
 Plugin Name: Responsive Video Shortcodes
 Plugin URI: http://wordpress.org/extend/plugins/responsive-video-shortcodes/
 Description: This tiny Plugin allows you to embed Online Video from YouTube, Vimeo and more for a responsive Layout - they scale according to the screen size. It features shortcode and widget.
 Author: Felix Arntz
-Version: 1.15
+Version: 1.16
 Author URI: http://www.leaves-and-love.net/
 */
 
-define( 'RESPVID_VERSION', '1.15' );
+define( 'RESPVID_VERSION', '1.16' );
 
 require( plugin_dir_path( __FILE__ ) . 'respvid-widget.php' );
 
