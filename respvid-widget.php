@@ -9,138 +9,152 @@
  * @package Responsive Video Shortcodes
  * @version 1.16
  */
-class respvid_widget extends WP_Widget
+class Respvid_Widget extends WP_Widget
 {
-    function respvid_widget()
+    public function __construct()
     {
-        $widget_ops = array( 'classname' => 'widget_respvid_widget', 'description' => __( 'Use this widget to display a custom list of videos in a responsive way.', 'respvid' ) );
-        $this->WP_Widget( 'widget_respvid_widget', __( 'Responsive Video List Widget', 'respvid' ), $widget_ops );
-        $this->alt_option_name = 'widget_respvid_widget';
+		parent::__construct( 'respvid_widget', __( 'Responsive Video List Widget', 'respvid' ), array(
+			'classname'		=> 'widget_respvid',
+			'description'	=> __( 'Use this widget to display a custom list of videos in a responsive way.', 'respvid' ),
+		) );
     }
     
-    function form( $instance )
+    public function widget( $args, $instance )
     {
-        $instance = wp_parse_args( (array) $instance, array( 'title' => '', 'aspect-ratio' => '16:9', 'num-per-row' => 1, 'rtl' => 0, 'list' => '' ) );
-        $title = esc_attr( $instance['title'] );
-        $aspect_ratio = esc_attr( $instance['aspect-ratio'] );
-        $num_per_row = esc_attr( $instance['num-per-row'] );
-        $rtl = esc_attr( $instance['rtl'] );
-        $list = esc_textarea( $instance['list'] );
-        
+    	global $respvid_frontend;
+		
+		if( isset( $respvid_frontend ) )
+		{
+	        extract( $args );
+			
+			$defaults = $this->get_defaults();
+	        extract( wp_parse_args( $instance, $defaults ) );
+			
+	        $aspect_ratio = str_replace( ':', '-', $aspect_ratio );
+	        $urls = preg_split( '/\r\n|[\r\n]/', $urls );
+	        
+	        if( $num_per_row == 1 )
+	        {
+	        	$align = 'center';
+	        }
+	        elseif( $rtl )
+	        {
+	        	$align = 'right';
+	        }
+	        else
+	        {
+	        	$align = 'left';
+	        }
+	        
+	        echo $before_widget;
+			
+	        if ( $title != '' )
+	        {
+	            echo $before_title . apply_filters( 'widget_title', $title, $instance, $this->id_base ) . $after_title;
+	        }
+	           
+	        if ( is_array( $urls ) && count( $urls ) > 0 )
+	        {
+	        	foreach( $urls as $url )
+	        	{
+					echo $respvid_frontend->get_embed_video( $url, $align . ' resp-num-' . $num_per_row, $aspect_ratio );
+	        	}
+	        	echo '<div class="clear"></div>';
+	        }
+	        else
+	        {
+	            ?>
+	            <p><?php _e( 'There are no videos to display.', 'respvid' ) ?></p>
+	            <?php
+	        }
+			
+	        echo $after_widget;
+        }
+    }
+    
+    public function form( $instance )
+    {
+    	$defaults = $this->get_defaults();
+		extract( wp_parse_args( $instance, $defaults ) );
         ?>
+        
         <p>
-            <label for="<?php echo $this->get_field_id('title'); ?>"><?php _e('Widget Title'); ?></label>
-            <input class="widefat" id="<?php echo $this->get_field_id('title'); ?>" name="<?php echo $this->get_field_name('title'); ?>" type="text" value="<?php echo $title; ?>" />
+            <label for="<?php echo $this->get_field_id( 'title' ); ?>"><?php _e( 'Widget Title' ); ?></label>
+            <input type="text" id="<?php echo $this->get_field_id( 'title' ); ?>" name="<?php echo $this->get_field_name( 'title' ); ?>" value="<?php echo esc_attr( $title ); ?>" class="widefat" />
         </p>
         <p>
-        	<label for="<?php echo $this->get_field_id('aspect-ratio'); ?>"><?php _e('Aspect Ratio', 'respvid'); ?></label>
-        	<select class="widefat" id="<?php echo $this->get_field_id('aspect-ratio'); ?>" name="<?php echo $this->get_field_name('aspect-ratio'); ?>">
+        	<label for="<?php echo $this->get_field_id( 'aspect-ratio' ); ?>"><?php _e( 'Aspect Ratio', 'respvid' ); ?></label>
+        	<select id="<?php echo $this->get_field_id( 'aspect_ratio' ); ?>" name="<?php echo $this->get_field_name( 'aspect_ratio' ); ?>" class="widefat">
         		<?php
-        		$options = resp_get_allowed_aspect_ratios();
+        		$options = respvid_get_allowed_aspect_ratios();
         		foreach( $options as $option )
         		{
-        			echo '<option value="' . $option . '" id="' . $option . '" ' . selected( $option, $aspect_ratio ) . '>' . $option . '</option>';
+        			echo '<option value="' . $option . '" ' . selected( $option, $aspect_ratio ) . '>' . $option . '</option>';
         		}
         		?>
         	</select>
         </p>
         <p>
-        	<label for="<?php echo $this->get_field_id('num-per-row'); ?>"><?php _e('Videos per row', 'respvid'); ?></label>
-        	<input class="widefat" id="<?php echo $this->get_field_id('num-per-row'); ?>" name="<?php echo $this->get_field_name('num-per-row'); ?>" type="text" value="<?php echo $num_per_row; ?>" />
-        	<br />
-        	<em><?php _e('Value must be between 1 and 6', 'respvid'); ?></em>
+        	<label for="<?php echo $this->get_field_id( 'num_per_row' ); ?>"><?php _e( 'Videos per row', 'respvid' ); ?></label>
+        	<input type="number" id="<?php echo $this->get_field_id( 'num_per_row' ); ?>" name="<?php echo $this->get_field_name( 'num_per_row' ); ?>" value="<?php echo esc_attr( $num_per_row ); ?>" min="1" max="6" step="1" class="widefat" />
+        </p>
+        <p class="description">
+        	<?php _e('Value must be between 1 and 6', 'respvid'); ?>
         </p>
         <p>
-        	<input id="<?php echo $this->get_field_id('rtl'); ?>" name="<?php echo $this->get_field_name('rtl'); ?>" type="checkbox" value="1" <?php checked( '1', $rtl ); ?>/>
-        	<label for="<?php echo $this->get_field_id('rtl'); ?>"><?php _e('Right-to-Left Language?', 'respvid'); ?></label>
+        	<input type="checkbox" id="<?php echo $this->get_field_id( 'rtl' ); ?>" name="<?php echo $this->get_field_name( 'rtl' ); ?>" value="true" <?php checked( true, $rtl ); ?> />
+        	<label for="<?php echo $this->get_field_id( 'rtl' ); ?>"><?php _e( 'Right-to-Left Language?', 'respvid' ); ?></label>
         </p>
         <p>
-        	<label for="<?php echo $this->get_field_id('list'); ?>"><?php _e('List of Video URLs', 'respvid'); ?></label>
-        	<textarea class="widefat" style="height:100px;" id="<?php echo $this->get_field_id('list'); ?>" name="<?php echo $this->get_field_name('list'); ?>"><?php echo $list; ?></textarea>
-        	<br />
-        	<em><?php _e('One URL per line. No other separators than the linebreak.')?></em>
+        	<label for="<?php echo $this->get_field_id( 'urls' ); ?>"><?php _e( 'List of Video URLs', 'respvid' ); ?></label>
+        	<textarea id="<?php echo $this->get_field_id( 'urls' ); ?>" name="<?php echo $this->get_field_name( 'urls' ); ?>" rows="6" class="widefat"><?php echo esc_textarea( $urls ); ?></textarea>
+        </p>
+        <p class="description">
+        	<?php _e('One URL per line. No other separators than the linebreak.') ?>
         </p>
     
         <?php
     }
-    
-    function validate_num_per_row( $value )
-    {
-    	if( $value > 6 )
-    	{
-    		return 6;
-    	}
-    	else if( $value < 1 )
-    	{
-    		return 1;
-    	}
-    	else
-    	{
-    		return $value;
-    	}
-    }
             
-    function update( $new_instance, $old_instance )
+    public function update( $new_instance, $old_instance )
     {
+    	$options = respvid_get_allowed_aspect_ratios();
+		
         $instance = $old_instance;
         $instance['title'] = strip_tags( $new_instance['title'] );
-        $instance['aspect-ratio'] = strip_tags( $new_instance['aspect-ratio'] );
-        $instance['num-per-row'] = $this->validate_num_per_row( intval( strip_tags( $new_instance['num-per-row'] ) ) );
-        $instance['rtl'] = strip_tags( $new_instance['rtl'] );
-        $instance['list'] = strip_tags( $new_instance['list'] );
+		if( in_array( $new_instance['aspect_ratio'], $options ) )
+		{
+			$instance['aspect_ratio'] = $new_instance['aspect_ratio'];
+		}
+		$new_instance['num_per_row'] = absint( $new_instance['num_per_row'] );
+		if( $new_instance['num_per_row'] < 7 && $new_instance['num_per_row'] > 0 )
+		{
+			$instance['num_per_row'] = $new_instance['num_per_row'];
+		}
+		if( isset( $new_instance['rtl'] ) )
+		{
+			$instance['rtl'] = true;
+		}
+		else
+		{
+			$instance['rtl'] = false;
+		}
+        
+        $instance['urls'] = strip_tags( $new_instance['urls'] );
                 
         return $instance;
     }
-    
-    function widget( $args, $instance )
-    {
-        extract( $args );
-        extract( $instance );
-        $title = $instance['title'];
-        $aspect_ratio = str_replace( ':', '-', $instance['aspect-ratio'] );
-        $num_per_row = $instance['num-per-row'];
-        $rtl = $instance['rtl'];
-        $urls = preg_split( '/\r\n|[\r\n]/', $instance['list'] );
-        
-        if( $num_per_row == 1 )
-        {
-        	$align = 'center';
-        }
-        else if( $rtl )
-        {
-        	$align = 'right';
-        }
-        else
-        {
-        	$align = 'left';
-        }
-        
-        echo $before_widget;
-        if ( $title != '' )
-        {
-            echo $before_title . apply_filters( 'widget_title', $title, $instance, $this->id_base ) . $after_title;
-        }
-        else
-        {
-            echo '<span class="paddingtop"></span>';
-        }
-           
-        if ( count( $urls ) > 0 && !empty( $urls[0] ) )
-        {
-        	foreach( $urls as $url )
-        	{
-        		echo resp_before_video( $align . ' resp-num-' . $num_per_row, $aspect_ratio );
-        		echo resp_embed_video( $url );
-        		echo resp_after_video();
-        	}
-        	echo '<div class="clear"></div>';
-        }
-        else
-        {
-            ?>
-            <p><?php _e('There are no videos to display.', 'respvid') ?></p>
-            <?php
-        }
-        echo $after_widget;
-    }
+	
+	public function get_defaults()
+	{
+		$defaults = array(
+			'title'			=> '',
+			'aspect_ratio'	=> '16:9',
+			'num_per_row'	=> 3,
+			'rtl'			=> false,
+			'urls'			=> '',
+		);
+		return $defaults;
+	}
 }
+?>

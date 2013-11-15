@@ -1,4 +1,8 @@
-@CHARSET "UTF-8";
+/**
+ * @package Responsive Video Shortcodes
+ * @version 1.2
+ * @author Felix Arntz <felix-arntz@leaves-and-love.net>
+ */
 
 .resp-video-wrapper {
 	position: relative;
