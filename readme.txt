@@ -1,18 +1,18 @@
 === Plugin Name ===
 
-Contributors:      flixos90
 Plugin Name:       Responsive Video Shortcodes
 Plugin URI:        http://wordpress.org/plugins/responsive-video-shortcodes/
 Tags:              autoplay, embed, iframe, media, oembed, responsive, rtl, shortcodes, url, video, widget
 Author URI:        http://leaves-and-love.net
 Author:            Felix Arntz
 Donate link:       http://leaves-and-love.net/responsive-video-shortcodes/
+Contributors:      flixos90
 Requires at least: 3.2 
-Tested up to:      3.7.1
-Stable tag:        1.2
-Version:           1.2
-License: GPLv2 or later
-License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Tested up to:      3.8.1
+Stable tag:        1.2.1
+Version:           1.2.1
+License:		   GPL v3 
+License URI:	   http://www.gnu.org/licenses/gpl-3.0
 
 This tiny Plugin allows you to embed Online Video from YouTube, Vimeo and more media for a responsive Layout - they scale according to the screen size. It features shortcode and widget.
 
@@ -22,7 +22,7 @@ Responsive Video Shortcodes is a tiny Plugin that allows you to embed video file
 
 You can furthermore use the plugin to display even non-video media in a responsive manner, for example Flickr images, Soundcloud songs or Spotify playlists.
 
-**IMPORTANT:** Since version 1.2, a compatibility mode exists to make this plugin's [video] shortcode compatible with the WordPress Core [video] shortcode which has been introduced in 3.6. This plugin's shortcode creates a wrapper around embedded videos and other media to make them responsive. It has nothing to do with the homonymous WordPress Core shortcode (which handles HTML5 video). Please keep in mind that the WordPress [video] shortcode is self-closing while this plugin's [video] shortcode isn't. This is how the two shortcodes can be separated from each other.
+**IMPORTANT:** Since version 1.2.0, a compatibility mode exists to make this plugin's [video] shortcode compatible with the WordPress Core [video] shortcode which has been introduced in 3.6. This plugin's shortcode creates a wrapper around embedded videos and other media to make them responsive. It has nothing to do with the homonymous WordPress Core shortcode (which handles HTML5 video). Please keep in mind that the WordPress [video] shortcode is self-closing while this plugin's [video] shortcode isn't. This is how the two shortcodes can be separated from each other.
 
 = Supported Aspect ratios =
 
@@ -35,7 +35,7 @@ You can furthermore use the plugin to display even non-video media in a responsi
 
 = Autoplay functionality =
 
-As of Version 1.16, Vimeo and Soundcloud are the only platforms supporting autoplays using oEmbed (the WordPress way to embed media). Therefore it is currently not possible to extend the plugin to add the autoplay functionality for another provider. However, if more platforms start supporting this, it will be implemented in future versions of the plugin aswell.
+As of Version 1.1.6, Vimeo and Soundcloud are the only platforms supporting autoplays using oEmbed (the WordPress way to embed media). Therefore it is currently not possible to extend the plugin to add the autoplay functionality for another provider. However, if more platforms start supporting this, it will be implemented in future versions of the plugin aswell.
 
 == Installation ==
 
@@ -69,30 +69,33 @@ Maybe you entered them the wrong way. Please give only ONE VIDEO URL per line, a
 
 == Changelog ==
 
-= 1.2 =
+= 1.2.1 =
+* Minor Changes under the Hood
+
+= 1.2.0 =
 * Compatibility Mode for WordPress [video] shortcode included
 * Plugin is now fully object-oriented
 * Widget security improved
 
-= 1.16 =
+= 1.1.6 =
 * Readme updated
 
-= 1.15 =
+= 1.1.5 =
 * Three more Aspect-ratios (3:2, 3:1, 5:6) added
 * Autoplay Functionality added for all providers supporting this
 * POT File for Translations added
 * German Translation added
 
-= 1.1 =
+= 1.1.0 =
 * Widget for Responsive Video List added
 * Plugin now translation-ready
 
-= 1.0 =
+= 1.0.0 =
 * First stable version
 
 == Upgrade Notice ==
 
-The current version of Responsive Video Shortcodes requires WordPress 2.9 or higher. Some video hosting platforms might not be available for use if you do not have the current version of WordPress installed.
+The current version of Responsive Video Shortcodes requires WordPress 3.2 or higher. Some video hosting platforms might not be available for use if you do not have the current version of WordPress installed.
 
 == Additional Credit ==
 

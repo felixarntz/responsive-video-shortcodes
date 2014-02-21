@@ -5,7 +5,7 @@
  * This class adds a menu page containing a short guide to the WordPress backend.
  * 
  * @package Responsive Video Shortcodes
- * @version 1.2
+ * @version 1.2.1
  * @author Felix Arntz <felix-arntz@leaves-and-love.net>
  */
 class Respvid_Backend
@@ -18,7 +18,7 @@ class Respvid_Backend
 	/**
 	 * Adds an options page to the WordPress Settings menu.
 	 * 
-	 * @since 1.0
+	 * @since 1.0.0
 	 */
 	public function admin_menu()
 	{
@@ -31,7 +31,7 @@ class Respvid_Backend
 	 * Since the plugin only consists of an easy-to-use shortcode and a widget, there are no settings to display.
 	 * Instead, the options page shows a short guide on how to use these things.
 	 * 
-	 * @since 1.0
+	 * @since 1.0.0
 	 */
 	public function options_page()
 	{
@@ -60,4 +60,3 @@ class Respvid_Backend
 		echo '</div>' . "\n";
 	}
 }
-?>

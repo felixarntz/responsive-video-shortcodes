@@ -31,7 +31,7 @@ You want to help developing the plugin? That is amazing! If you have some code t
 
 Current News on oEmbed
 ----------------------
-WordPress uses [oEmbed](http://oembed.com/) to embed external media. As of Version 1.15, Responsive Video Shortcodes includes an autoplay attribute for the short code. However, as far as I found out, only Vimeo and Soundcloud support autoplays using oEmbed, and still they have different names for the argument. If you find out that another of the WordPress-supported oEmbed platforms supports autoplay, it would be nice if you let me know.
+WordPress uses [oEmbed](http://oembed.com/) to embed external media. As of Version 1.1.5, Responsive Video Shortcodes includes an autoplay attribute for the short code. However, as far as I found out, only Vimeo and Soundcloud support autoplays using oEmbed, and still they have different names for the argument. If you find out that another of the WordPress-supported oEmbed platforms supports autoplay, it would be nice if you let me know.
 
 Currently the only services supporting autoplay with oEmbed are:
 * [Vimeo](https://developer.vimeo.com/apis/oembed)

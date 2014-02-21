@@ -7,7 +7,8 @@
  * If needed, RTL support can be turned on (media will be right-aligned).
  * 
  * @package Responsive Video Shortcodes
- * @version 1.16
+ * @version 1.2.1
+ * @author Felix Arntz <felix-arntz@leaves-and-love.net>
  */
 class Respvid_Widget extends WP_Widget
 {
@@ -157,4 +158,3 @@ class Respvid_Widget extends WP_Widget
 		return $defaults;
 	}
 }
-?>

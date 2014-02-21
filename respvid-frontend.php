@@ -5,7 +5,7 @@
  * This class includes all methods required to use the responsive [video] shortcode in the WordPress frontend.
  * 
  * @package Responsive Video Shortcodes
- * @version 1.2
+ * @version 1.2.1
  * @author Felix Arntz <felix-arntz@leaves-and-love.net>
  */
 class Respvid_Frontend
@@ -45,7 +45,7 @@ class Respvid_Frontend
 	 * @param string $content the content in between the shortcode tags
 	 * @return string the output created by the shortcode
 	 * @see before_video(), embed_video(), after_video()
-	 * @since 1.0
+	 * @since 1.0.0
 	 */
 	public function video_shortcode( $atts , $content = '' )
 	{
@@ -82,7 +82,7 @@ class Respvid_Frontend
 	 * @param string $content shortcode content
 	 * @param int $instances unique numeric ID of this video shortcode instance (not required here)
 	 * @return string if $content is not empty, this plugin's video shortcode output, otherwise an empty string to continue executing the Core video shortcode
-	 * @since 1.2
+	 * @since 1.2.0
 	 */
 	public function shortcode_compatibility_mode( $empty_string, $atts, $content = '', $instance = 0 )
 	{
@@ -105,7 +105,7 @@ class Respvid_Frontend
 	 * @param array $defaults the embed defaults array
 	 * @return array the modified embed defaults array containing an 'autoplay' key
 	 * @see handle_additional_embed_args()
-	 * @since 1.15
+	 * @since 1.1.5
 	 */
 	public function modify_wp_embed_defaults( $defaults = array() )
 	{
@@ -130,7 +130,7 @@ class Respvid_Frontend
 	 * @param array $args additional arguments (contain 'width', 'height' and 'autoplay' keys)
 	 * @return string the provider string with a query argument for autoplay (if necessary)
 	 * @link https://developer.vimeo.com/apis/oembed, http://developers.soundcloud.com/docs/oembed
-	 * @since 1.15
+	 * @since 1.1.5
 	 */
 	public function handle_additional_embed_args( $provider, $url, $args = array() )
 	{
@@ -156,7 +156,7 @@ class Respvid_Frontend
 	/**
 	 * Registers and enqueues the necessary CSS stylesheet.
 	 * 
-	 * @since 1.0
+	 * @since 1.0.0
 	 */
 	public function enqueue_scripts()
 	{
@@ -175,7 +175,7 @@ class Respvid_Frontend
 	 * @param int $width the width of the video in percent
 	 * @param int $autoplay either 0 for autoplay off or 1 for autoplay on
 	 * @return string the whole HTML code with the embed and the containing divs
-	 * @since 1.2
+	 * @since 1.2.0
 	 */
 	public function get_embed_video( $url, $align, $aspect, $width = null, $autoplay = 0 )
 	{
@@ -192,7 +192,7 @@ class Respvid_Frontend
 	 * @param string $aspect the aspect ratio of the video
 	 * @param int $width the width of the video in percent
 	 * @return string HTML code containing two divs with the necessary CSS classes attached
-	 * @since 1.0
+	 * @since 1.0.0
 	 */
 	private function before_video( $align, $aspect, $width = null )
 	{
@@ -214,7 +214,7 @@ class Respvid_Frontend
 	 * @param string $url the URL of the video
 	 * @param int $autoplay either 0 for autoplay off or 1 for autoplay on
 	 * @return string HTML code containing the oEmbed
-	 * @since 1.0
+	 * @since 1.0.0
 	 */
 	private function embed_video( $url, $autoplay = 0 )
 	{
@@ -231,7 +231,7 @@ class Respvid_Frontend
 	 * Returns content to be printed after the video.
 	 * 
 	 * @return string HTML code containing two closing divs
-	 * @since 1.0
+	 * @since 1.0.0
 	 */
 	private function after_video()
 	{
@@ -247,7 +247,7 @@ class Respvid_Frontend
 	 * @param String $aspect_ratio the aspect ratio of the video. Possible values are "4:3", "21:9" and "16:9" (default)
 	 * @param int $width the width of the video in %. Must be greater than 0 and lower than 101. Default value is 100.
 	 * @return array contains the validated attributes
-	 * @since 1.0
+	 * @since 1.0.0
 	 */
 	private function validate_attributes( $align, $aspect_ratio, $width, $autoplay )
 	{
@@ -293,4 +293,3 @@ class Respvid_Frontend
 		return $atts;
 	}
 }
-?>

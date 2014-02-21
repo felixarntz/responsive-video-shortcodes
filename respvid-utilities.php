@@ -1,14 +1,14 @@
 <?php
 /**
  * @package Responsive Video Shortcodes
- * @version 1.2
+ * @version 1.2.1
  * @author Felix Arntz <felix-arntz@leaves-and-love.net>
  */	
 /**
  * Returns an array of allowed aspect ratios.
  * 
  * @return array contains the aspect ratios that are valid
- * @since 1.15
+ * @since 1.1.5
  */
 function respvid_get_allowed_aspect_ratios()
 {
@@ -22,5 +22,3 @@ function respvid_get_allowed_aspect_ratios()
 	);
 	return $allowed;
 }
-
-?>
