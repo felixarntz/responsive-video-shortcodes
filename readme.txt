@@ -22,8 +22,7 @@ Responsive Video Shortcodes is a tiny plugin that allows you to embed video file
 
 You can furthermore use the plugin to display even non-video media in a responsive manner, for example Flickr images, Soundcloud songs or Spotify playlists.
 
-> = Shortcode Compatibility =
-> Since version 1.2.0, a compatibility mode exists to make this plugin's [video] shortcode compatible with the WordPress Core [video] shortcode which has been introduced in 3.6. This plugin's shortcode creates a wrapper around embedded videos and other media to make them responsive. It has nothing to do with the homonymous WordPress Core shortcode (which handles HTML5 video). Please keep in mind that the WordPress [video] shortcode is self-closing while this plugin's [video] shortcode isn't. This is how the two shortcodes can be separated from each other.
+> **Shortcode Compatibility:** Since version 1.2.0, a compatibility mode exists to make this plugin's [video] shortcode compatible with the WordPress Core [video] shortcode which has been introduced in 3.6. This plugin's shortcode creates a wrapper around embedded videos and other media to make them responsive. It has nothing to do with the homonymous WordPress Core shortcode (which handles HTML5 video). Please keep in mind that the WordPress [video] shortcode is self-closing while this plugin's [video] shortcode isn't. This is how the two shortcodes can be separated from each other.
 
 = Supported Aspect ratios =
 
@@ -82,15 +81,6 @@ Maybe you entered them the wrong way. Please give only ONE VIDEO URL per line, a
 * Compatibility Mode for WordPress [video] shortcode included
 * Plugin is now fully object-oriented
 * Widget security improved
-
-= 1.1.6 =
-* Readme updated
-
-= 1.1.5 =
-* Three more Aspect-ratios (3:2, 3:1, 5:6) added
-* Autoplay Functionality added for all providers supporting this
-* POT File for Translations added
-* German Translation added
 
 = 1.1.0 =
 * Widget for Responsive Video List added
