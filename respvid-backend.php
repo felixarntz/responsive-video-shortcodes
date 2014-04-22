@@ -4,13 +4,24 @@
  *
  * This class adds a menu page containing a short guide to the WordPress backend.
  * 
- * @package Responsive Video Shortcodes
- * @version 1.2.1
+ * @package ResponsiveVideoShortcodes
+ * @version 1.2.2
  * @author Felix Arntz <felix-arntz@leaves-and-love.net>
  */
 class Respvid_Backend
 {
-	public function __construct()
+  private static $instance = null;
+
+  public static function instance()
+  {
+    if( self::$instance === null )
+    {
+      self::$instance = new self;
+    }
+    return self::$instance;
+  }
+
+	private function __construct()
 	{
 		add_action( 'admin_menu', array( $this, 'admin_menu' ) );
 	}
@@ -60,3 +71,6 @@ class Respvid_Backend
 		echo '</div>' . "\n";
 	}
 }
+
+// Class instantiation
+Respvid_Backend::instance();

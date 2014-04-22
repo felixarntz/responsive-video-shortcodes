@@ -2,27 +2,28 @@
 
 Plugin Name:       Responsive Video Shortcodes
 Plugin URI:        http://wordpress.org/plugins/responsive-video-shortcodes/
-Tags:              autoplay, embed, iframe, media, oembed, responsive, rtl, shortcodes, url, video, widget
+Tags:              autoplay, embed, iframe, media, oembed, responsive, rtl, shortcodes, url, video, widget, youtube, vimeo, soundcloud
 Author URI:        http://leaves-and-love.net
 Author:            Felix Arntz
 Donate link:       http://leaves-and-love.net/responsive-video-shortcodes/
 Contributors:      flixos90
 Requires at least: 3.2 
-Tested up to:      3.8.1
-Stable tag:        1.2.1
-Version:           1.2.1
-License:		   GPL v3 
-License URI:	   http://www.gnu.org/licenses/gpl-3.0
+Tested up to:      3.9
+Stable tag:        1.2.2
+Version:           1.2.2
+License:           GPL v3 
+License URI:       http://www.gnu.org/licenses/gpl-3.0
 
-This tiny Plugin allows you to embed Online Video from YouTube, Vimeo and more media for a responsive Layout - they scale according to the screen size. It features shortcode and widget.
+This tiny plugin allows you to embed online video from YouTube, Vimeo and more media for a responsive layout - they scale according to the screen size. It features shortcode and widget.
 
 == Description ==
 
-Responsive Video Shortcodes is a tiny Plugin that allows you to embed video files from the popular video hosting platforms in a responsive design. It is based on the Wordpress oEmbed Feature, so it supports every online service that is natively supported by Wordpress. All you need to do is use the shortcode and put a video URL in the content between the tags. Alternatively, you can use the included widget to display a (responsive) list of videos.
+Responsive Video Shortcodes is a tiny plugin that allows you to embed video files from the popular video hosting platforms in a responsive design. It is based on the WordPress oEmbed feature, so it supports every online service that is natively supported by WordPress. All you need to do is use the shortcode and put a video URL in the content between the tags. Alternatively, you can use the included widget to display a (responsive) list of videos.
 
 You can furthermore use the plugin to display even non-video media in a responsive manner, for example Flickr images, Soundcloud songs or Spotify playlists.
 
-**IMPORTANT:** Since version 1.2.0, a compatibility mode exists to make this plugin's [video] shortcode compatible with the WordPress Core [video] shortcode which has been introduced in 3.6. This plugin's shortcode creates a wrapper around embedded videos and other media to make them responsive. It has nothing to do with the homonymous WordPress Core shortcode (which handles HTML5 video). Please keep in mind that the WordPress [video] shortcode is self-closing while this plugin's [video] shortcode isn't. This is how the two shortcodes can be separated from each other.
+> = Shortcode Compatibility =
+> Since version 1.2.0, a compatibility mode exists to make this plugin's [video] shortcode compatible with the WordPress Core [video] shortcode which has been introduced in 3.6. This plugin's shortcode creates a wrapper around embedded videos and other media to make them responsive. It has nothing to do with the homonymous WordPress Core shortcode (which handles HTML5 video). Please keep in mind that the WordPress [video] shortcode is self-closing while this plugin's [video] shortcode isn't. This is how the two shortcodes can be separated from each other.
 
 = Supported Aspect ratios =
 
@@ -63,11 +64,16 @@ Maybe you entered them the wrong way. Please give only ONE VIDEO URL per line, a
 
 == Screenshots ==
 
-1. screenshot-1.png
-2. screenshot-2.png
-3. screenshot-3.png
+1. Video Examples
+2. Shortcode Examples
+3. Widget Example
 
 == Changelog ==
+
+= 1.2.2 =
+* Frontend and backend classes now use Singleton Pattern
+* Added composer.json
+* Now on Packagist
 
 = 1.2.1 =
 * Minor Changes under the Hood

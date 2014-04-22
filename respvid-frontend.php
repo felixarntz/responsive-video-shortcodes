@@ -4,13 +4,24 @@
  *
  * This class includes all methods required to use the responsive [video] shortcode in the WordPress frontend.
  * 
- * @package Responsive Video Shortcodes
- * @version 1.2.1
+ * @package ResponsiveVideoShortcodes
+ * @version 1.2.2
  * @author Felix Arntz <felix-arntz@leaves-and-love.net>
  */
 class Respvid_Frontend
 {
-	public function __construct()
+  private static $instance = null;
+
+  public static function instance()
+  {
+    if( self::$instance === null )
+    {
+      self::$instance = new self;
+    }
+    return self::$instance;
+  }
+
+	private function __construct()
 	{
 		if( !shortcode_exists( 'video' ) )
 		{
@@ -161,7 +172,7 @@ class Respvid_Frontend
 	public function enqueue_scripts()
 	{
 		wp_register_style( 'resp-video-style', RESPVID_URL . 'assets/respvid.css' );
-	    wp_enqueue_style( 'resp-video-style' );
+		wp_enqueue_style( 'resp-video-style' );
 	}
 	
 	/**
@@ -293,3 +304,6 @@ class Respvid_Frontend
 		return $atts;
 	}
 }
+
+// Class instantiation
+Respvid_Frontend::instance();
