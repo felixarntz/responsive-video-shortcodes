@@ -8,9 +8,9 @@ Author:            Felix Arntz
 Donate link:       http://leaves-and-love.net/responsive-video-shortcodes/
 Contributors:      flixos90
 Requires at least: 3.2 
-Tested up to:      3.9
-Stable tag:        1.2.2
-Version:           1.2.2
+Tested up to:      3.9.1
+Stable tag:        1.2.3
+Version:           1.2.3
 License:           GPL v3 
 License URI:       http://www.gnu.org/licenses/gpl-3.0
 
@@ -68,6 +68,9 @@ Maybe you entered them the wrong way. Please give only ONE VIDEO URL per line, a
 3. Widget Example
 
 == Changelog ==
+
+= 1.2.3 =
+* Includes Spanish translation (credit to Andrew Kurtis <andrewk@webhostinghub.com>)
 
 = 1.2.2 =
 * Frontend and backend classes now use Singleton Pattern

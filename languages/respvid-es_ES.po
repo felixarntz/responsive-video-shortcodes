@@ -1,0 +1,231 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: responsive-video\n"
+"POT-Creation-Date: 2013-09-06 02:10+0100\n"
+"PO-Revision-Date: 2014-07-25 09:24+0100\n"
+"Last-Translator: jelena kovacevic <jecajeca260@gmail.com>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.5.5\n"
+"X-Poedit-KeywordsList: __;_e\n"
+"X-Poedit-Basepath: .\n"
+"X-Poedit-SearchPath-0: ..\n"
+
+#: ../respvid-widget.php:16
+msgid "Use this widget to display a custom list of videos in a responsive way."
+msgstr ""
+"Utilice este widget para mostrar una lista personalizada de videos de una "
+"manera flexible."
+
+#: ../respvid-widget.php:17
+msgid "Responsive Video List Widget"
+msgstr "Widget de Lista de Video Flexible "
+
+#: ../respvid-widget.php:32
+msgid "Widget Title"
+msgstr "Título del Widget"
+
+#: ../respvid-widget.php:36
+msgid "Aspect Ratio"
+msgstr "Proporción de Aspecto"
+
+#: ../respvid-widget.php:48
+msgid "Videos per row"
+msgstr "Videos por fila"
+
+#: ../respvid-widget.php:51
+msgid "Value must be between 1 and 6"
+msgstr "El valor debe estar entre 1 y 6"
+
+#: ../respvid-widget.php:55
+msgid "Right-to-Left Language?"
+msgstr "¿Idioma de derecha a izquierda?"
+
+#: ../respvid-widget.php:58
+msgid "List of Video URLs"
+msgstr "Lista de URLs de Video"
+
+#: ../respvid-widget.php:61
+msgid "One URL per line. No other separators than the linebreak."
+msgstr "Una URL por línea. No hay otros separadores que el salto de línea."
+
+#: ../respvid-widget.php:141
+msgid "There are no videos to display."
+msgstr "No hay vídeos para mostrar."
+
+#: ../respvid.php:64
+msgid "Settings"
+msgstr "Configuraciones"
+
+#: ../respvid.php:65
+msgid "You're lucky!"
+msgstr "¡Tiene suerte!"
+
+#: ../respvid.php:65
+msgid ""
+"This plugin does not require any settings. However, you find a short "
+"tutorial on this page to see how the shortcode and the widget work."
+msgstr ""
+"Este plugin no requiere ninguna configuración. Sin embargo, usted puede "
+"encontrar un breve tutorial en esta página para ver cómo trabaja el código "
+"corto y los widgets."
+
+#: ../respvid.php:66
+msgid ""
+"This plugin supports all the video hosting platforms that Wordpress natively "
+"supports. You can find a list of these in the"
+msgstr ""
+"Este plugin es compatible con todas las plataformas de hospedaje de vídeo "
+"que Wordpress soporta de forma nativa. Usted puede encontrar una lista de "
+"estos en el"
+
+#: ../respvid.php:67
+msgid ""
+"Furthermore (although it is not the original purpose of the plugin) you can "
+"also use the shortcode to display other oEmbed media in a responsive manner. "
+"For this reason, the plugin also allows some aspect ratios that would be "
+"weird for video, like 3:2, 3:1 and 5:6."
+msgstr ""
+"Más aún (aunque no es el objetivo original del plugin) usted puede usar "
+"también el código corto para mostrar otra media oEmbed de una manera "
+"flexible. Por esta razón, el plugin también permite algunas proporciones de "
+"aspecto que serían extrañas para el video, como 3:2, 3:1 y 5:6."
+
+#: ../respvid.php:68
+msgid ""
+"A few recommendations? Many images use an aspect ratio of 3:2, the 3:1 ratio "
+"might be useful for single audio like from Soundcloud or Spotify, while the "
+"5:6 thing is a good choice for audio playlists or something like that."
+msgstr ""
+"¿Algunas recomendaciones? Muchas imágenes usan una proporción de aspecto de "
+"3:2, el aspecto de 3:1 puede ser útil para un audio simple como desde "
+"Soundcloud o Spotify, mientras la cosa de 5:6 es una buena opción para "
+"listas de reproducción de audio o algo como eso."
+
+#: ../respvid.php:69
+msgid "Shortcode usage"
+msgstr "Uso de Código Corto"
+
+#: ../respvid.php:70
+msgid "Example"
+msgstr "Ejemplo"
+
+#: ../respvid.php:71
+msgid ""
+"This shortcode allows you to embed video from video hosting platforms (and "
+"some other media) in a responsive way. It can be used for any platform that "
+"the <a href=\"http://codex.wordpress.org/Embeds\" target=\"_blank"
+"\">Wordpress oEmbed Feature</a> supports."
+msgstr ""
+"Este código corto le permite incrustar el video a plataformas de hospedaje "
+"de vídeo (y algunas otras medias) de una manera flexible. Se puede utilizar "
+"para cualquier plataforma que la  <a href=\"http://codex.wordpress.org/Embeds"
+"\" target=\"_blank\">Característica de Wordpress oEmbed</a> soporte."
+
+#: ../respvid.php:72
+msgid ""
+"All you need to do is insert the video URL as the content between, the "
+"shortcode will then handle the responsive embedding."
+msgstr ""
+"Todo lo que necesita hacer es insertar la URL del video como el contenido "
+"dentro, el código corto entonces manejará el embedding flexible."
+
+#: ../respvid.php:73
+msgid "Parameters"
+msgstr "Parámetros"
+
+#: ../respvid.php:74
+msgid "The shortcode uses the following three parameters:"
+msgstr "El código corto utiliza los siguientes tres parámetros:"
+
+#: ../respvid.php:76
+msgid ""
+"The alignment of the video; if you use &quot;left&quot; or &quot;"
+"right&quot;, it will be a float layout."
+msgstr ""
+"La alineación del video; si usa &quot;left&quot; o &quot;right&quot;, será "
+"un layout flotante."
+
+#: ../respvid.php:76 ../respvid.php:77 ../respvid.php:78 ../respvid.php:79
+msgid "Possible values:"
+msgstr "Valores posibles:"
+
+#: ../respvid.php:76 ../respvid.php:77 ../respvid.php:78 ../respvid.php:79
+msgid "Default"
+msgstr "Por Defecto"
+
+#: ../respvid.php:77
+msgid ""
+"The aspect ratio of the video; be careful: not all services look good on "
+"every ratio."
+msgstr ""
+"Tenga cuidado con la proporción de aspecto del vídeo; no todos los servicios "
+"se ven bien en cualquier proporción."
+
+#: ../respvid.php:78
+msgid ""
+"The width of the video in percent; please only write the number, NOT the "
+"percent sign."
+msgstr ""
+"El ancho del video en porcentaje; por favor solo escriba el número, NO el "
+"signo de por ciento."
+
+#: ../respvid.php:78
+msgid "every full number between 1 and 100"
+msgstr "cada número completo entre 1 y 100"
+
+#: ../respvid.php:79
+msgid ""
+"If the media content should start playing automatically; sadly, as of now "
+"Vimeo and Soundcloud are the only platforms supporting autoplays in oEmbed; "
+"this attribute will not change anything when used with another provider"
+msgstr ""
+"Si el contenido de la media debe comenzar de forma automática; "
+"lamentablemente, a partir de ahora Vimeo y Soundcloud son las únicas "
+"plataformas que soportan autoplays en oEmbed; este atributo no va a cambiar "
+"nada si se utiliza con otro proveedor "
+
+#: ../respvid.php:81
+msgid ""
+"<em>Note:</em> All parameters are optional. If they are not given, the "
+"default values are used."
+msgstr ""
+"<em>Nota:</em>Todos los parámetros son opcionales. Si no se les da valores, "
+"se utilizarán los valores predeterminados."
+
+#: ../respvid.php:82
+msgid "Widget usage"
+msgstr "uso del Widget"
+
+#: ../respvid.php:83
+msgid ""
+"Using the widget you can display a list of videos (or other media) in a "
+"responsive way - the videos scale down according to the widget width. The "
+"widget furthermore supports RTL language formatting."
+msgstr ""
+"Usando el widget puede mostrar una lista de videos (u otros medios) de una "
+"manera flexible - la escala de los videos es en función del ancho de los "
+"widgets. Los widgets además soportan el formato de idioma RTL."
+
+#: ../respvid.php:84
+msgid ""
+"The widget settings are rather self-explainatory. All you need to do is to "
+"type in the URLs of your videos into the text area (one URL per line!). You "
+"can then choose the aspect ratio of the videos (note again: not all hosting "
+"services support all ratios!) as well as how many videos will be displayed "
+"in a row. If you tick the checkbox, the videos will be presented from right-"
+"to-left - and that's about it."
+msgstr ""
+"Los ajustes de la herramienta son bastante autoexplicativos. Todo lo que "
+"necesita hacer es escribir en las direcciones URL de sus videos en el área "
+"de texto (¡una URL por línea!). A continuación, puede elegir el formato de "
+"los videos (¡tenga en cuenta una vez más: no todos los servicios de hosting "
+"soportan todas las proporciones!), así como cuántos videos se mostrará en "
+"una fila. Si marca la casilla de verificación, los videos serán presentados "
+"a derecha a izquierda - y eso es todo."
+
+#: ../respvid.php:172
+msgid "Error: Invalid URL!"
+msgstr "¡Error: URL Inválida!"

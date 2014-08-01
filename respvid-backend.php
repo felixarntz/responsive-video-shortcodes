@@ -5,7 +5,7 @@
  * This class adds a menu page containing a short guide to the WordPress backend.
  * 
  * @package ResponsiveVideoShortcodes
- * @version 1.2.2
+ * @version 1.2.3
  * @author Felix Arntz <felix-arntz@leaves-and-love.net>
  */
 class Respvid_Backend
