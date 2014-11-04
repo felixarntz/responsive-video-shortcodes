@@ -5,7 +5,7 @@ Plugin URI:        http://wordpress.org/plugins/responsive-video-shortcodes/
 Tags:              autoplay, embed, iframe, media, oembed, responsive, rtl, shortcodes, url, video, widget, youtube, vimeo, soundcloud
 Author URI:        http://leaves-and-love.net
 Author:            Felix Arntz
-Donate link:       http://leaves-and-love.net/responsive-video-shortcodes/
+Donate link:       http://leaves-and-love.net/wordpress-plugins/
 Contributors:      flixos90
 Requires at least: 3.2 
 Tested up to:      3.9.1
