@@ -70,6 +70,10 @@ Maybe you entered them the wrong way. Please give only ONE VIDEO URL per line, a
 
 == Changelog ==
 
+= 1.2.4 =
+* Added new aspect ratio 1:1
+* Fixed a CSS bug by applying !important to the embed properties
+
 = 1.2.3 =
 * Includes Spanish translation (credit to Andrew Kurtis <andrewk@webhostinghub.com>)
 
