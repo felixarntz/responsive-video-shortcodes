@@ -1,7 +1,7 @@
 {
   "name": "felixarntz/responsive-video-shortcodes",
   "description": "This tiny plugin allows you to embed online video from YouTube, Vimeo and more media for a responsive layout - they scale according to the screen size.",
-  "version": "1.2.3",
+  "version": "1.2.4",
   "license": "GPL-3.0",
   "type": "wordpress-plugin",
   "keywords": ["wordpress", "oembed", "responsive", "embed", "media", "shortcodes"],

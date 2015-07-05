@@ -3,7 +3,7 @@
 Plugin Name:    Responsive Video Shortcodes
 Plugin URI:     http://wordpress.org/plugins/responsive-video-shortcodes/
 Description:    This tiny plugin allows you to embed online video from YouTube, Vimeo and more for a responsive layout - they scale according to the screen size. It features shortcode and widget.
-Version:        1.2.3
+Version:        1.2.4
 Author:         Felix Arntz
 Author URI:     http://leaves-and-love.net/
 Text Domain:    respvid
@@ -26,11 +26,11 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
 /**
  * @package ResponsiveVideoShortcodes
- * @version 1.2.3
+ * @version 1.2.4
  * @author Felix Arntz <felix-arntz@leaves-and-love.net>
  */
 
-define( 'RESPVID_VERSION', '1.2.3' );
+define( 'RESPVID_VERSION', '1.2.4' );
 define( 'RESPVID_MAINFILE', __FILE__ );
 define( 'RESPVID_PATH', plugin_dir_path( RESPVID_MAINFILE ) );
 define( 'RESPVID_URL', plugin_dir_url( RESPVID_MAINFILE ) );

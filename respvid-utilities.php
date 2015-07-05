@@ -1,7 +1,7 @@
 <?php
 /**
  * @package ResponsiveVideoShortcodes
- * @version 1.2.3
+ * @version 1.2.4
  * @author Felix Arntz <felix-arntz@leaves-and-love.net>
  */	
 /**
@@ -19,6 +19,7 @@ function respvid_get_allowed_aspect_ratios()
 		'3:2',
 		'3:1',
 		'5:6',
+    '1:1',
 	);
 	return $allowed;
 }

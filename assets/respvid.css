@@ -1,6 +1,6 @@
 /**
  * @package ResponsiveVideoShortcodes
- * @version 1.2.3
+ * @version 1.2.4
  * @author Felix Arntz <felix-arntz@leaves-and-love.net>
  */
 
@@ -34,11 +34,15 @@
   padding-bottom: 120%;
 }
 
+.size-1-1 {
+  padding-bottom: 100%;
+}
+
 .resp-video-wrapper iframe, .resp-video-wrapper object, .resp-video-wrapper embed {
-  position: absolute;
-  margin: 0;
-  width: 100%;
-  height: 100%;
+  position: absolute !important;
+  margin: 0 !important;
+  width: 100% !important;
+  height: 100% !important;
 }
 
 .resp-video-left {

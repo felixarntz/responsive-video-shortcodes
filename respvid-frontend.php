@@ -5,7 +5,7 @@
  * This class includes all methods required to use the responsive [video] shortcode in the WordPress frontend.
  * 
  * @package ResponsiveVideoShortcodes
- * @version 1.2.3
+ * @version 1.2.4
  * @author Felix Arntz <felix-arntz@leaves-and-love.net>
  */
 class Respvid_Frontend
