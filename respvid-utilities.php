@@ -1,7 +1,7 @@
 <?php
 /**
  * @package ResponsiveVideoShortcodes
- * @version 1.2.4
+ * @version 1.2.5
  * @author Felix Arntz <felix-arntz@leaves-and-love.net>
  */	
 /**

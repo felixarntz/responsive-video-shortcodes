@@ -3,10 +3,10 @@
 Plugin Name:    Responsive Video Shortcodes
 Plugin URI:     http://wordpress.org/plugins/responsive-video-shortcodes/
 Description:    This tiny plugin allows you to embed online video from YouTube, Vimeo and more for a responsive layout - they scale according to the screen size. It features shortcode and widget.
-Version:        1.2.4
+Version:        1.2.5
 Author:         Felix Arntz
 Author URI:     http://leaves-and-love.net/
-Text Domain:    respvid
+Text Domain:    responsive-video-shortcodes
 Domain Path:    /languages/
 License:        GPL v3
 License URI:    http://opensource.org/licenses/GPL-3.0
@@ -26,16 +26,16 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
 /**
  * @package ResponsiveVideoShortcodes
- * @version 1.2.4
+ * @version 1.2.5
  * @author Felix Arntz <felix-arntz@leaves-and-love.net>
  */
 
-define( 'RESPVID_VERSION', '1.2.4' );
+define( 'RESPVID_VERSION', '1.2.5' );
 define( 'RESPVID_MAINFILE', __FILE__ );
 define( 'RESPVID_PATH', plugin_dir_path( RESPVID_MAINFILE ) );
 define( 'RESPVID_URL', plugin_dir_url( RESPVID_MAINFILE ) );
 define( 'RESPVID_BASENAME', plugin_basename( RESPVID_MAINFILE ) );
-define( 'RESPVID_WEBSITE', 'http://leaves-and-love.net/responsive-video-shortcodes/' );
+define( 'RESPVID_WEBSITE', 'http://wordpress.org/plugins/responsive-video-shortcodes/' );
 
 /**
  * Initializes the plugin's frontend class
@@ -75,6 +75,6 @@ add_action( 'widgets_init', 'respvid_widgets_init' );
  */
 function respvid_load_translations()
 {
-  load_plugin_textdomain( 'respvid', false, dirname( plugin_basename( __FILE__ ) ) . '/languages/' );
+  load_plugin_textdomain( 'responsive-video-shortcodes', false, dirname( plugin_basename( __FILE__ ) ) . '/languages/' );
 }
 add_action( 'wp_loaded', 'respvid_load_translations' );

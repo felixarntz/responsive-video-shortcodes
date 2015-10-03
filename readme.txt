@@ -9,8 +9,8 @@ Donate link:       http://leaves-and-love.net/wordpress-plugins/
 Contributors:      flixos90
 Requires at least: 3.2 
 Tested up to:      4.3
-Stable tag:        1.2.4
-Version:           1.2.4
+Stable tag:        1.2.5
+Version:           1.2.5
 License:           GPL v3 
 License URI:       http://www.gnu.org/licenses/gpl-3.0
 
@@ -69,6 +69,9 @@ Maybe you entered them the wrong way. Please give only ONE VIDEO URL per line, a
 3. Widget Example
 
 == Changelog ==
+
+= 1.2.5 =
+* changed textdomain to `responsive-video-shortcodes` for translate.wordpress.org
 
 = 1.2.4 =
 * Added new aspect ratio 1:1

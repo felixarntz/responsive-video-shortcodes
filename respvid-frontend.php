@@ -5,7 +5,7 @@
  * This class includes all methods required to use the responsive [video] shortcode in the WordPress frontend.
  * 
  * @package ResponsiveVideoShortcodes
- * @version 1.2.4
+ * @version 1.2.5
  * @author Felix Arntz <felix-arntz@leaves-and-love.net>
  */
 class Respvid_Frontend
@@ -233,7 +233,7 @@ class Respvid_Frontend
 		$embed_code = wp_oembed_get( $url, array( 'width' => '100%', 'height' => '100%', 'autoplay' => $autoplay ) );
 		if( !$embed_code )
 		{
-			return '<strong>' . __('Error: Invalid URL!', 'respvid') . '</strong>';
+			return '<strong>' . __( 'Error: Invalid URL!', 'responsive-video-shortcodes' ) . '</strong>';
 		}
 		return preg_replace( $regex, '', $embed_code );
 	}

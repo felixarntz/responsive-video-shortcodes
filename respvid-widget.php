@@ -7,16 +7,16 @@
  * If needed, RTL support can be turned on (media will be right-aligned).
  * 
  * @package ResponsiveVideoShortcodes
- * @version 1.2.4
+ * @version 1.2.5
  * @author Felix Arntz <felix-arntz@leaves-and-love.net>
  */
 class Respvid_Widget extends WP_Widget
 {
   public function __construct()
   {
-    parent::__construct( 'respvid_widget', __( 'Responsive Video List Widget', 'respvid' ), array(
+    parent::__construct( 'respvid_widget', __( 'Responsive Video List Widget', 'responsive-video-shortcodes' ), array(
       'classname'   => 'widget_respvid',
-      'description' => __( 'Use this widget to display a custom list of videos in a responsive way.', 'respvid' ),
+      'description' => __( 'Use this widget to display a custom list of videos in a responsive way.', 'responsive-video-shortcodes' ),
     ) );
   }
     
@@ -62,7 +62,7 @@ class Respvid_Widget extends WP_Widget
     else
     {
       ?>
-      <p><?php _e( 'There are no videos to display.', 'respvid' ) ?></p>
+      <p><?php _e( 'There are no videos to display.', 'responsive-video-shortcodes' ) ?></p>
       <?php
     }
 
@@ -80,7 +80,7 @@ class Respvid_Widget extends WP_Widget
         <input type="text" id="<?php echo $this->get_field_id( 'title' ); ?>" name="<?php echo $this->get_field_name( 'title' ); ?>" value="<?php echo esc_attr( $title ); ?>" class="widefat" />
     </p>
     <p>
-      <label for="<?php echo $this->get_field_id( 'aspect-ratio' ); ?>"><?php _e( 'Aspect Ratio', 'respvid' ); ?></label>
+      <label for="<?php echo $this->get_field_id( 'aspect-ratio' ); ?>"><?php _e( 'Aspect Ratio', 'responsive-video-shortcodes' ); ?></label>
       <select id="<?php echo $this->get_field_id( 'aspect_ratio' ); ?>" name="<?php echo $this->get_field_name( 'aspect_ratio' ); ?>" class="widefat">
         <?php
         $options = respvid_get_allowed_aspect_ratios();
@@ -92,18 +92,18 @@ class Respvid_Widget extends WP_Widget
       </select>
     </p>
     <p>
-      <label for="<?php echo $this->get_field_id( 'num_per_row' ); ?>"><?php _e( 'Videos per row', 'respvid' ); ?></label>
+      <label for="<?php echo $this->get_field_id( 'num_per_row' ); ?>"><?php _e( 'Videos per row', 'responsive-video-shortcodes' ); ?></label>
       <input type="number" id="<?php echo $this->get_field_id( 'num_per_row' ); ?>" name="<?php echo $this->get_field_name( 'num_per_row' ); ?>" value="<?php echo esc_attr( $num_per_row ); ?>" min="1" max="6" step="1" class="widefat" />
     </p>
     <p class="description">
-      <?php _e('Value must be between 1 and 6', 'respvid'); ?>
+      <?php _e('Value must be between 1 and 6', 'responsive-video-shortcodes'); ?>
     </p>
     <p>
       <input type="checkbox" id="<?php echo $this->get_field_id( 'rtl' ); ?>" name="<?php echo $this->get_field_name( 'rtl' ); ?>" value="true" <?php checked( true, $rtl ); ?> />
-      <label for="<?php echo $this->get_field_id( 'rtl' ); ?>"><?php _e( 'Right-to-Left Language?', 'respvid' ); ?></label>
+      <label for="<?php echo $this->get_field_id( 'rtl' ); ?>"><?php _e( 'Right-to-Left Language?', 'responsive-video-shortcodes' ); ?></label>
     </p>
     <p>
-      <label for="<?php echo $this->get_field_id( 'urls' ); ?>"><?php _e( 'List of Video URLs', 'respvid' ); ?></label>
+      <label for="<?php echo $this->get_field_id( 'urls' ); ?>"><?php _e( 'List of Video URLs', 'responsive-video-shortcodes' ); ?></label>
       <textarea id="<?php echo $this->get_field_id( 'urls' ); ?>" name="<?php echo $this->get_field_name( 'urls' ); ?>" rows="6" class="widefat"><?php echo esc_textarea( $urls ); ?></textarea>
     </p>
     <p class="description">
