@@ -1,6 +1,8 @@
 Responsive Video Shortcodes
 ===========================
 
+**This plugin is no longer maintained.**
+
 This is the Github repository for the Responsive Video Shortcodes plugin for WordPress.
 
 For more information about what the plugin does, please visit [its website in the WordPress Plugin Repository](http://wordpress.org/plugins/responsive-video-shortcodes/).

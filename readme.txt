@@ -18,11 +18,18 @@ This tiny plugin allows you to embed online video from YouTube, Vimeo and more m
 
 == Description ==
 
+> **No longer maintained:**
+> This plugin is no longer maintained. Unfortunately I don't have the capacities to keep up with this project as there are other WordPress-related projects & plugins that are higher priority to me, and to a certain degree I also feel like, while this plugin serves a specific useful purpose, its job should rather be done by a theme (and many do so already). Also, if I started this plugin now, I wouldn't go for a shortcode, but just handle the videos automatically to make them responsive. But I don't want to go to much into detail here.
+> I want to thank all the users of this plugin, you really gave me a warm welcome here (this was my first plugin!). I understand if you feel a little let down now, but there are only 24 hours in a day... I hope you can see my point of view as well.
+> Generally however, I think this plugin is good to go on without any updates as this part of functionality shouldn't open any security holes. The downside is that there won't be any enhancements any longer. So again, thank you so much for your motivation and that you use the plugin!
+
 Responsive Video Shortcodes is a tiny plugin that allows you to embed video files from the popular video hosting platforms in a responsive design. It is based on the WordPress oEmbed feature, so it supports every online service that is natively supported by WordPress. All you need to do is use the shortcode and put a video URL in the content between the tags. Alternatively, you can use the included widget to display a (responsive) list of videos.
 
 You can furthermore use the plugin to display even non-video media in a responsive manner, for example Flickr images, Soundcloud songs or Spotify playlists.
 
-> **Shortcode Compatibility:** Since version 1.2.0, a compatibility mode exists to make this plugin's [video] shortcode compatible with the WordPress Core [video] shortcode which has been introduced in 3.6. This plugin's shortcode creates a wrapper around embedded videos and other media to make them responsive. It has nothing to do with the homonymous WordPress Core shortcode (which handles HTML5 video). Please keep in mind that the WordPress [video] shortcode is self-closing while this plugin's [video] shortcode isn't. This is how the two shortcodes can be separated from each other.
+= Shortcode Compatibility =
+
+Since version 1.2.0, a compatibility mode exists to make this plugin's [video] shortcode compatible with the WordPress Core [video] shortcode which has been introduced in 3.6. This plugin's shortcode creates a wrapper around embedded videos and other media to make them responsive. It has nothing to do with the homonymous WordPress Core shortcode (which handles HTML5 video). Please keep in mind that the WordPress [video] shortcode is self-closing while this plugin's [video] shortcode isn't. This is how the two shortcodes can be separated from each other.
 
 = Supported Aspect ratios =
 
